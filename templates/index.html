@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>flask application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="header">
+            <h3>My Cars</h3>
+        </div>
+        <div class="imgside1">
+            <img src="{{ url_for('static', filename='images/car1.jpg') }}" alt="car img" id="carimage">
+        </div>
+        <div class="content1">
+            <p>
+                <h3>Welcome to MyCar - Your Road to the Perfect Ride!</h3>
+                <br>
+
+                   At MyCar, we understand that choosing the right car is not just about finding a set of wheels;
+                 it's about finding your ideal partner on the road. Our mission is to make this journey enjoyable and stress-free for you.
+                With your unique needs and preferences as our compass, we'll help you navigate the vast world of automobiles.
+            </p>
+        </div>
+        <div class="quotes">
+            <h3>
+                "Every journey begins with a choice. At MyCar,
+                we're here to help you make the right one, ensuring that every drive is an adventure and every ride is a pleasure."
+            </h3>
+        </div>
+    </div>
+
+    <div class="one" id="second" > 
+        <div class="imgside">
+            <img src="{{url_for('static', filename='images/qu.jpg')}}" alt="question mark symbol" id="quesimg"   >
+        </div>
+        
+        
+        
+        <div class="lefthalf">
+
+            <div class="one" >
+
+                <div class="lh1">
+                    <h4>Can you select a car based on your needs?</h4>
+                </div>
+                <div class="lh2">
+                    <h4>Are you familiar with car selection?</h4>
+                </div>
+
+                <div class="lh3">
+                    <h4>One solution:Go below!</h4>
+                </div>
+
+            </div>
+
+            
+        </div>
+
+        </div>
+
+    <div class="one">
+        <div class="head1">
+            <h1>Find your Car.</h1>
+        </div>
+    </div>
+    
+    
+        <form action="/cars/" class="one" id="box" method="post">
+
+            <div class="boxone">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Fuel Type</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="fuel_type" required >
+                            <option selected>Select the fuel type</option>
+                            <option value="Gasoline">Gasoline</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="COmpressed natural gas">Compressed natural gas</option>
+                            <option value="E85">E85</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boxtwo">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Usage</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="usage" required>
+                            <option selected>select usage</option>
+                            <option value="office-house">Office and House</option>
+                            <option value="Business">Business</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boxthree">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Mileage</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="mileage" required>
+                            <option selected>select your Mileage</option>
+                            <option value="1">High</option>
+                            <option value="2">Average</option>
+                            <option value="3">Above-Average</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="boxfour">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Price range</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="price" required>
+                            <option selected>select your price range</option>
+                            <option value="1" >20L to 30L</option>
+                            <option value="2">30L to 40L</option>
+                            <option value="3">40L to 50L</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <div class="boxfive">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Power</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="carpower" required>
+                            <option selected>select car power</option>
+                            <option value="HIgh">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                          </select>
+                    </div>
+                </div>
+
+            </div>
+            
+            
+
+            <div class="boxsix">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Control</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="controls" required>
+                            <option selected>select menu</option>
+                            <option value="Automatic transmission">Automatic</option>
+                            <option value="Manual transmission">Manual</option>
+                            
+                          </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boxseven">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Released Year</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="year" required>
+                            <option selected>select released year</option>
+                            <option value="2012">lastest</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boxeight">
+                <div class="one">
+                    <div class="tt">
+                        <h3>Model</h3>
+                    </div>
+                    <div class="rt">
+                        <select class="form-select custom-select" aria-label="Default select example" name="model" required>
+                            <option selected>select your favourite Model</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Nisson">Nisson</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Ferrari">Ferrari</option>
+                            <option value="Rolls-Royce">Rolls-Royce</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Jeep">Jeep</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+
+            
+            <button type="submit" class="button">Submit</button>
+
+            
+
+            
+        </form>
+
+        
+
+        <div class="one" id="responsetable">
+            <table>
+                <tr>
+                    <th>Model</th>
+                    <th>City-mileage</th>
+                    <th>Classification</th>
+                    <th>Driveline </th>
+                    <th>Engine Type </th>
+                    <th>Fuel Type</th>
+                    <th>Highway km/l</th>
+                   
+                    <th>Released Year</th>
+                    <th>cylinders</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    {% for car in cars %}
+                    <tr>
+                        <td>{{ car.Make }}</td>
+                        <td>{{ car.City_ml }}</td>
+                        <td>{{ car.Classification }}</td>
+                        <td>{{ car.Driveline }}</td>
+                        <td>{{ car.Engine_Type }}</td>
+                        <td>{{ car.Fuel_Type }}</td>
+                        <td>{{ car.Highway_ml }}</td>
+                       
+                        <td>{{ car.Year }}</td>
+                        <td>{{ car.cylinders }}</td>
+                        <td>{{ car.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tr>
+                
+            </table>
+        </div> 
+
+        <br>
+        <br>
+
+
+
+        
+            <form action="/suggestion/" method="post" id="footer" class="one" >
+              
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"><h5>Any Suggestion?</h5></label>
+                    </div>
+                    <div class="in">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type your Suggestion" name="suggestiontext" required></textarea>
+                    </div>
+                    <div class="btn1">
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                
+                
+                
+            </form>
+
+
+            <script>
+                // Get a reference to the form element by its ID
+                const form = document.getElementById("box");
+            
+                // Add a form submit event listener
+                form.addEventListener("submit", function (event) {
+                    // Check if any of the required fields are not selected
+                    const requiredSelects = form.querySelectorAll("select[required]");
+                    let isFormValid = true;
+            
+                    requiredSelects.forEach(function (select) {
+                        if (select.value === "Select the fuel type") {
+                            // If any required select field has the default value, the form is not valid
+                            isFormValid = false;
+                        }
+                    });
+            
+                    // If the form is not valid, prevent form submission and show an alert
+                    if (!isFormValid) {
+                        event.preventDefault(); // Prevent form submission
+                        alert("Please fill out all required fields before submitting.");
+                    }
+                });
+
+                
+            </script>
+            
+        
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
